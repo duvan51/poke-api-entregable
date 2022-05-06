@@ -1,0 +1,53 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css');
+
+
+.homePageLogout{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right:20px;
+    padding-left:20px;
+    height: 100px;
+}
+.homePageLogoutName{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.homePageLogoutName>h1:nth-child(1){
+    font-size: 35px;
+    letter-spacing: 8px;
+}
+.homePageLogoutName>div:nth-child(2){
+    border-bottom: 5px solid rgb(255, 255, 0);
+    width:200px;
+    margin-top: -15px;;
+}
+
+.homePageLogout>button{
+    width:60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-size:20px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+
+.homePageDescription{
+    display: flex;
+    flex-direction: column;
+    padding-left:30px;
+    padding-right: 30px;
+    gap:1px;
+    margin-bottom: 20px;
+}
+.homePageDescription > *{
+    display: flex;
+
+}
+
+
