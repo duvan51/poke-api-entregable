@@ -1,6 +1,7 @@
 
 import getPokemonbyName from "../services/getAllPokemonbyName";
 import { useEffect, useState } from "react";
+import Loading from './loading/Loading.js'
 
 
 
@@ -12,18 +13,20 @@ const PokemonCard=({url})=>{
     const [pokemoncardId, setPokemoncardId]=useState(0)
     const [pokemoncardImage, setPokemoncardImage]=useState(" ")
     const [TypePokemon, setTypePokemon] = useState([])
-    const [hpPokemon, sethpPokemon] = useState( "")
+    const [hpPokemon, sethpPokemon] = useState("")
     const [AttackPokemon, setAttackPokemon] = useState("")
     const [DefensePokemon, setDefensePokemon] = useState("")
     const [SpeedPokemon, setSpeedPokemon] = useState("")
 
 
-
+    /**loading */
+    const [loading, setLoading] = useState(false)
 
    // const [names, setName]=({})
 
 
     useEffect(()=>{
+        setLoading(true)
         if(url){
             getPokemonbyName(url).then((res)=>{
              setPokemoncardName(res.data.name)
@@ -34,14 +37,18 @@ const PokemonCard=({url})=>{
              setAttackPokemon(res.data.stats[1].base_stat)
              setDefensePokemon(res.data.stats[2].base_stat)
              setSpeedPokemon(res.data.stats[5].base_stat)
+
+
+
             })
+        setLoading(false)
 
         }
 
     },[url])
 
     return (
-        <div> 
+        <div > 
 
 
                 <div className="card" >
@@ -55,12 +62,13 @@ const PokemonCard=({url})=>{
                     </div>
                     <div className="cardMain">
                         <div className="cardMainImg">
+                            {loading && <Loading />}
                             <img src={pokemoncardImage} alt="" />
                         </div>
                     </div>
-                    <div className="cardMainDecription">
+                    <div className="cardMainDecription px-4 py-1">
                         <div className="cardMainDecriptionTypes"> 
-                            types:
+                            {`types: `}
                             {TypePokemon.map(type => (
                                     <div key={type.slot} >
                                         {type.type.name}
@@ -68,20 +76,20 @@ const PokemonCard=({url})=>{
                                 ))
                             }
                          </div>
-                         <div className="cardMainHṕ">
-                            hp:
+                         <div className="cardMainHp">
+                            <div> HP: </div>
                             {hpPokemon}
                          </div>
-                         <div className="cardMainHṕ">
-                            Attack:
+                         <div className="cardMainAttack">
+                            <div> ATTACK: </div>
                             {AttackPokemon}
                          </div>
-                         <div className="cardMainHṕ">
-                            defense:
+                         <div className="cardMainDefense">
+                            <div> DEFENSE: </div>
                             {DefensePokemon}
                          </div>
-                         <div className="cardMainHṕ">
-                            speed:
+                         <div className="cardMainSpeed">
+                            <div> SPEED: </div>
                             {SpeedPokemon}
                          </div>
                     </div>

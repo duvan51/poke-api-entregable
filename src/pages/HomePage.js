@@ -27,7 +27,7 @@ const HomePage=()=>{
                 </div> 
             </div>
 {/* start filter------------------- */}
-            <div className="homepagelistAllPokemonnByType">  
+            <div className="homepagelistAllPokemonnByType px-5">  
                 <select className="form-select" aria-label="Default select example">
                     <option select="defaultValue" >select Type of Pokemon</option>
                         <FilterByType />    
@@ -36,7 +36,7 @@ const HomePage=()=>{
 {/* end filter----------------------*/
 
 /* start buscador------------------- */}
-            <div className="input-group">
+            <div className="input-group px-5" >
                 <SearchPokemon />
             </div>
 {/* end buscador------------------- */}

@@ -10,7 +10,28 @@
     width:100%;
     height:auto;
     display:grid;
-    grid-template-columns:350px 350px 350px;
+    grid-template-columns:350px;
     justify-content: center;
-    gap:2px;
+    gap:10px;
+}
+.cards > a{
+    text-decoration: none;
+}
+
+
+
+@media (min-width: 768px) { 
+    .cards{
+        display:grid;
+        grid-template-columns:350px 350px;
+    }
+
+
+
+}
+@media (min-width: 1024px) {
+    .cards{
+        display:grid;
+        grid-template-columns:350px 350px 350px;
+    }
 }

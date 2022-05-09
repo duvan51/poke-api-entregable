@@ -1,3 +1,7 @@
+a > *{ 
+    text-decoration:none;
+}
+
 .card{
     display: flex;
     justify-content: center;
@@ -30,8 +34,20 @@
 }
 
 
-.cardMain > .cardMainDecription{
-    background:yellow;
+.card > .cardMainDecription{
+    background:rgba(255, 255, 0, 0.259);
     width: 100%;
     height: auto;
+    display:flex;
+    flex-direction: column;
+    gap:2px;
+}
+.card > .cardMainDecription > div{
+    display:flex;
+    justify-content: space-between;
+
+}
+.card > .cardMainDecription > div >div{
+ 
+    
 }
